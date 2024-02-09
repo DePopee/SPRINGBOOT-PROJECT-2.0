@@ -28,7 +28,8 @@ public class StudentConfig {
                     "Mariam",
                     "mariam@gmail.com",
                     LocalDate.of(2000, JANUARY, 5),
-                    "Front-end"
+                    "Front-end",
+                    "Toddler"
 
             );
 
@@ -36,14 +37,16 @@ public class StudentConfig {
                     "Alex",
                     "alex@gmail.com",
                     LocalDate.of(2004, JANUARY, 5),
-                    "UI/UX"
+                    "UI/UX",
+                    "Adolescent"
             );
 
             Student irene = new Student(
                     "Irene",
                     "irene@gmail.com",
                     LocalDate.of(1996, JUNE, 23),
-                    "Back-end"
+                    "Back-end",
+                    "Teenager"
             );
 
             repository.saveAll(

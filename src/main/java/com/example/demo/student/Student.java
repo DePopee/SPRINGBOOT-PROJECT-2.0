@@ -18,6 +18,7 @@ public class Student {
             generator = "student_sequence"
     )
     private Long id;
+    @Column(unique = true, nullable = false) // Ensure uniqueness for the name and disallow null values
     private String name;
     @Column(name = "email", unique = true, nullable = false)
     private String email;
@@ -26,7 +27,8 @@ public class Student {
     private LocalDate dob;
 
     @Column(name = "student_group", nullable = false)
-    private String studentGroup; // Changed from 'group' to 'studentGroup'
+    private String studentGroup;// Changed from 'group' to 'studentGroup'
+    private String subGroup;
 
 
     @Transient
@@ -39,22 +41,26 @@ public class Student {
                    String name,
                    String email,
                    LocalDate dob,
-                   String studentGroup) {
+                   String studentGroup,
+                   String subGroup) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.dob = dob;
         this.studentGroup = studentGroup;
+        this.subGroup = subGroup;
     }
 
     public Student(String name,
                    String email,
                    LocalDate dob,
-                   String studentGroup) {
+                   String studentGroup,
+                   String subGroup) {
         this.name = name;
         this.email = email;
         this.dob = dob;
         this.studentGroup = studentGroup;
+        this.subGroup = subGroup;
     }
 
     public Long getId() {
@@ -92,8 +98,14 @@ public class Student {
         return studentGroup;
     }
 
-    public void setStudentGroup(String group)  {
-    this.studentGroup = group;
+    public void setStudentGroup(String studentGroup)  {
+    this.studentGroup = studentGroup;
+    }
+    public String getSubGroup() {
+        return subGroup;
+    }
+    public void setSubGroup(String subGroup) {
+        this.subGroup = subGroup;
     }
 
     public Integer getAge() {
