@@ -29,7 +29,7 @@ public class StudentResponse {
 
 
     // Getters and setters
-    
+
     public String getName() {
         return name;
     }
